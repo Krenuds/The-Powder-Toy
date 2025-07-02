@@ -43,7 +43,7 @@ void Element::Element_BASE()
 	HighTemperature = ITH;
 	HighTemperatureTransition = NT;
 
-	DefaultProperties.life = 75;
+	DefaultProperties.life = 76;
 
 	Update = &update;
 	Graphics = &graphics;
@@ -110,9 +110,11 @@ static int update(UPDATE_FUNC_ARGS)
 					continue;
 				int rt = TYP(r);
 
+				//Don't react with some elements
 				if (rt != PT_BASE && rt != PT_SALT && rt != PT_SLTW && rt != PT_BOYL && rt != PT_MERC &&
 					       	rt != PT_BMTL && rt != PT_BRMT && rt != PT_SOAP && rt != PT_CLNE && rt != PT_PCLN &&
-						!(rt == PT_ICEI && parts[ID(r)].ctype == PT_BASE) && !(rt == PT_SNOW && parts[ID(r)].ctype == PT_BASE))
+						!(rt == PT_ICEI && parts[ID(r)].ctype == PT_BASE) && !(rt == PT_SNOW && parts[ID(r)].ctype == PT_BASE) &&
+						!(rt == PT_SPRK && parts[ID(r)].ctype == PT_BMTL) && !(rt == PT_SPRK && parts[ID(r)].ctype == PT_BRMT))
 				{
 					//Base is diluted by water
 					if (parts[i].life > 1 && (rt == PT_WATR || rt == PT_DSTW || rt == PT_CBNW))
@@ -214,19 +216,19 @@ static int graphics(GRAPHICS_FUNC_ARGS)
 {
 	int s = cpart->life;
 
-	if (s < 25)
+	if (s <= 25)
 	{
 		*colr = 0x33;
 		*colg = 0x4C;
 		*colb = 0xD8;
 	}
-	else if (s < 50)
+	else if (s <= 50)
 	{
 		*colr = 0x58;
 		*colg = 0x83;
 		*colb = 0xE8;
 	}
-	else if (s < 75)
+	else if (s <= 75)
 	{
 		*colr = 0x7D;
 		*colg = 0xBA;
