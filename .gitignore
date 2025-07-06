@@ -1,95 +1,49 @@
-# Misc extensions, system files
-*.zip
-*.txt
-*.gz
-*.out
-*.sh
-*.py
-*.png
-*.ppm
+# Build directories
+build/
+dist/
+out/
+
+# Compiled files
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.exe
+*.a
+*.lib
+*.pdb
+
+# IDE files
+.vscode/
+.idea/
 *.swp
+*.swo
 *~
 .DS_Store
 
-# Build files
-build*/*
-*.o
-*.exe
-*.dmg
-*.dll
-*.a
-*.la
-
-# Legacy SCons files
-config.log
-*.sconsign.dblite
-*.sconf_temp
-/site_scons/
-/generated/
-
-# User data
-/stamps/
-/Saves/
-/scripts/
-/recordings/
-*.def
-*.pref
-*.lua
-screenshot_*
-
-# Visual studio
-/Debug/
-/Release/
-/includes/
-*.vcxproj*
-*.user
-*.filter
-*.sln
-*.suo
-*.manifest
-*.manifest.res
-*manifest.rc
-*res.res
-*.idb
-*.obj
-*.tlog
-*.lib
-*.ipch
-*.ilk
-*.log
-*.lastbuildstate
-*.unsuccessfulbuild
-*.pdb
-*.db
-
-# QtCreator / KDevelop
-*.user
-*.config
-*.creator*
-*.cflags
-*.cxxflags
-*.files
-*.includes
-*.kdev4
-/.kdev4
-
-# Other IDEs / misc
-/.idea
-.vscode/
-.vs/
-*.sublime-*
-*.project
-*.cproject
-*.settings
-*.cbp
-*.layout
-*.gch
+# Python cache
+__pycache__/
 *.pyc
-*.xcodeproj
-*.plist
-*.lproj
-*.opensdf
-*.sdf
-/font/
+*.pyo
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Android build files
+android/build/
+android/.gradle/
+*.apk
+*.aab
+
+# Generated files
+src/Config.h
+src/VcsTag.h
+src/ElementNumbers.h
+src/ToolNumbers.h
+
+# Meson build system
+.mesonbuild/
 compile_commands.json
-ignore/
